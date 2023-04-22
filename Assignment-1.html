@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #d1{
+            width: 50%;
+            height:80vh;
+            background-color: burlywood;
+            overflow: hidden;
+        }
+        #d2{
+            width: 50%;
+            height:80vh;
+            background-color: aqua;
+        }
+        img{
+            align-items: center;
+            padding: 100px;
+            height: 100px;
+            width:100px;
+        }
+        span{
+            padding: 30px;
+            font-size: 50px;
+        }
+        input{
+            margin-left: 30px;
+            float: right;
+            margin-right: 120px;
+            margin-top: 30px;
+        }
+        h1{
+            background-color: black;
+            color: white;
+            text-align: center;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">
+        <img src="./AMAR PHOTO-min.jpeg" id="img">
+    </div>
+    <div id="d2">
+        <span>blur</span>
+        <input type="range" id="blur" min="0" max="100" value="0" oninput="edit()"><br><br>
+        <span>brightness</span>
+        <input type="range" id="brightness" min="0" max="200" value="100" oninput="edit()"><br><br>
+        <span>saturation</span>
+        <input type="range" id="saturation" min="0" max="200" value="0" oninput="edit()"><br><br>
+        <span>hue</span>
+        <input type="range" id="hue" min="0" max="360" value="0" oninput="edit()"><br><br>
+        <span>contrast</span>
+        <input type="range" id="contrast" min="0" max="360" value="0" oninput="edit()">
+    </div>
+    <script>
+            function edit()
+            {
+                var blur=document.getElementById("blur").value;
+                var bright=document.getElementById("brightness").value;
+                var saturation=document.getElementById("saturation").value;
+                var hue=document.getElementById("hue").value;
+                var contrast=document.getElementById("contrast").value;
+                document.getElementById("img").style.filter=`blur(${blur}px) brightness(${bright}%) saturate(${saturation}%) hue-rotate(${hue}deg) contrast(${contrast}%)`;
+            }
+    </script>
+</body>
+</html>
